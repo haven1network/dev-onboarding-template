@@ -1,0 +1,37 @@
+{
+    "name": "haven1-solidity",
+    "scripts": {
+        "clean:coverage": "rm -rf coverage coverage.json",
+        "clean:docs": "rm -rf docs",
+        "clean": "npx hardhat clean && npm run clean:coverage && npm run clean:docs && rm -rf cache gas-report.txt",
+        "test": "npx hardhat clean && npx hardhat test",
+        "docgen": "npm run clean:docs && npx hardhat docgen",
+        "coverage": "npm run clean:coverage && npx hardhat clean && npx hardhat coverage",
+        "prettier:check": "npx prettier . --check",
+        "prettier:write": "npx prettier . --write",
+        "eslint": "npx eslint ./",
+        "lint": "npm run prettier:check && npm run eslint && npx hardhat check",
+        "deploy:local": "npx hardhat run --network localhost ./scripts/deployLocal.ts",
+        "deploy:testnet": "npx hardhat run --network haven_testnet ./scripts/deployTestnet.ts",
+        "verify:testnet": "npx hardhat verifyTestnet --network haven_testnet"
+    },
+    "devDependencies": {
+        "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+        "@nomiclabs/hardhat-solhint": "^3.0.1",
+        "@openzeppelin/hardhat-upgrades": "^2.2.1",
+        "@typescript-eslint/eslint-plugin": "^6.7.4",
+        "@typescript-eslint/parser": "^6.7.4",
+        "eslint": "^8.50.0",
+        "hardhat": "^2.17.3",
+        "hardhat-contract-sizer": "^2.10.0",
+        "prettier": "^2.8.8",
+        "prettier-plugin-solidity": "^1.1.3",
+        "solidity-docgen": "^0.6.0-beta.36",
+        "tsconfig-paths": "^4.2.0"
+    },
+    "dependencies": {
+        "@openzeppelin/contracts": "^4.9.3",
+        "@openzeppelin/contracts-upgradeable": "^4.9.3",
+        "dotenv": "^16.3.1"
+    }
+}

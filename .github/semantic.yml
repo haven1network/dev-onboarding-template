@@ -1,0 +1,11 @@
+# Enable/disable creation of status checks
+enabled: true
+# Validate the PR title and all commit messages
+titleAndCommits: true
+# If commitsOnly or titleAndCommits is set to true, then only a single commit needs to pass validation instead of every commit
+anyCommit: true
+
+# Allow merge commits (e.g. 'Merge branch "master" into fix/delete-all-tests')
+allowMergeCommits: true
+# Allow revert commits (e.g. 'Revert "fix: delete all tests"')
+allowRevertCommits: true
