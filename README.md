@@ -347,19 +347,34 @@ ready, follow the steps below to complete the setup of your environment.
     && rm -rf .git && git init
     ```
 
-4.  Install dependencies
+4.  Ensure you are running Node 18. The following command should output v18.x.x
+
+    ```bash
+    node --version
+    ```
+
+    If the above command outputs any other version other than 18 you'll need to
+    install Node 18 before continuing. Or, if  you have
+    [nvm](https://github.com/nvm-sh/nvm), run the following command to install
+    and switch to Node 18
+
+    ```bash
+    nvm install
+    ```
+
+5.  Install dependencies
 
     ```bash
     npm i
     ```
 
-5.  Create `.env`
+6.  Create `.env`
 
     ```bash
     cp .env.example .env
     ```
 
-6.  Compile contracts and generate types
+7.  Compile contracts and generate types
     ```bash
     npx hardhat compile
     ```
